@@ -1,0 +1,24 @@
+<div class="titulo">
+  <div mat-dialog-title>
+    <h1>Categoria formulario</h1>
+  </div>
+</div>
+
+
+<form [formGroup]="categoriasForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" placeholder="Escribe aqui" formControlName="categoria">
+      </mat-form-field>
+          </div>
+
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Editar':'Guardar'}}</button>
+  </div>
+</form>
+
+

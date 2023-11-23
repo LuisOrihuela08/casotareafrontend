@@ -1,0 +1,32 @@
+.example-spacer {
+  width: 100%;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 30rem;
+}
+.boton{
+  margin: 5px;
+  padding: 10px;
+  }
+.titulo-libros{
+  margin: 5px;
+  padding: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3rem;
+}
+.main-body {
+  max-width: 1248px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.mat-form-field {
+  width: 100%;
+}
+.table-container{
+display: flex;
+flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

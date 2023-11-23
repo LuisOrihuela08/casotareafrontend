@@ -1,0 +1,40 @@
+<div mat-dialog-title>
+  <h1>Lector formulario</h1>
+</div>
+
+<form [formGroup]="lectoresForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" placeholder="Escribe aqui" formControlName="nombre">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label>Codigo Postal</mat-label>
+        <input matInput placeholder="Escribe aqui" formControlName="codigopostal">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label>Dirección</mat-label>
+        <input matInput type="email" placeholder="Escribe aqui" formControlName="direccion">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label>Observaciones</mat-label>
+        <input matInput type="email" placeholder="Escribe aqui" formControlName="observaciones">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label>Teléfono</mat-label>
+        <input matInput type="email" placeholder="Escribe aqui" formControlName="telefono">
+      </mat-form-field>
+    </div>
+
+
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Editar':'Guardar'}}</button>
+  </div>
+</form>

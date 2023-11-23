@@ -1,0 +1,86 @@
+<div mat-dialog-title>
+  <h1>Libro formulario</h1>
+</div>
+
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="libroField">Titulo</mat-label>
+        <input matInput type="text" placeholder="Escribe aqui" formControlName="titulo" id="libroField">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="autor">Autor</mat-label>
+        <mat-select formControlName="autor">
+          <mat-option *ngFor="let autor of listAutores" [value]="autor" id="autor">
+            {{autor.autor}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="categoria">Categoria</mat-label>
+        <mat-select formControlName="categoria">
+          <mat-option *ngFor="let categoria of listCategorias" [value]="categoria" id="categoria">
+            {{categoria.categoria}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="descripcionField">Descripción</mat-label>
+        <input matInput type="email" placeholder="Escribe aqui" formControlName="descripcion" id="descripcionField">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="editorial">Editorial</mat-label>
+        <mat-select formControlName="editorial">
+          <mat-option *ngFor="let editorial of listEditoriales" [value]="editorial" id="editorial">
+            {{editorial.editorial}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="fecha_LANZAMIENTO">Fecha Lanzamiento</mat-label>
+        <input matInput type="fecha" placeholder="Escribe aqui" formControlName="fecha_LANZAMIENTO"
+          id="fecha_LANZAMIENTO">
+      </mat-form-field>
+
+      <!--
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="fecha_LANZAMIENTO">Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" >
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+-->
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="idiomaField">Idioma</mat-label>
+        <input matInput type="email" placeholder="Escribe aqui" formControlName="idioma" id="idiomaField">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="paginasField">Paginas</mat-label>
+        <input matInput placeholder="Escribe aqui" formControlName="paginas" id="paginasField">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="mat-form-field">
+        <mat-label for="portadaField">Portada</mat-label>
+        <input matInput placeholder="inserte link" formControlName="portada" id="portadaField">
+      </mat-form-field>
+    </div>
+
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Editar':'Guardar'}}</button>
+  </div>
+</form>
